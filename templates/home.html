@@ -1,0 +1,45 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sales Home Page</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{%url 'home'%}">Home</a>
+                <a class="navbar-brand" href="#">Today's Deals</a>
+                <a class="navbar-brand" href="#">Appliances</a>
+                <a class="navbar-brand" href="#">Your Cart</a>
+            </div>
+            <div>
+                <div class="navbar-right navbar-brand">
+                    <a class="btn btn-default" href="#">登入</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        </nav>
+        <div class ="container">
+            {% for p in products %}
+            <div class="p">
+                <h2>{{p.name}}</h2>
+                <p>{{p.description}}</p>
+                <button>Add to Cart!</button>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
