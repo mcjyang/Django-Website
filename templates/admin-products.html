@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+    <title>{% block title %}Admin | Sales{%endblock title %}</title>
+
+{% block function1 %}
+	<div class="container" id="new-product">
+	    <h1>Add Product</h1>
+	    <hr>
+	    <input type="text" id="product-name" placeholder="product"/>
+	    <input type="text" id="product-description" placeholder="description"/>
+	    <input type="submit" id="create-product" value="Create"/>
+	</div>
+	<br>
+{% endblock function1 %}
+
+{% block function2 %}
+	<button class="ajax-delete" id="{{p.pk}}">Delete</button>
+{% endblock function2 %}

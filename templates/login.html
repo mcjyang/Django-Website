@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+    <title>{% block title %}Log In | {{block.super}}{%endblock title %}</title>
+
+{% block body %}
+	<div class ="container">
+		<h1>Log In</h1>
+		<hr>
+		<div class="container">
+			<form action="" method="post">
+				{% csrf_token %} 
+			    <label for="username">UserName:</label>
+			    <input type="text" name="username" value="" id="username"><br />
+			    <label for="password">Password:</label>
+			    <input type="password" name="pwd" value="" id="password"> <br />
+			    <input type="submit" value="Log In"/>
+			</form>
+		</div>
+	</div>
+	
+    
+{% endblock body %}

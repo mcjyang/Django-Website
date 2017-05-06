@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+ 
+    <title>{% block title %}Admin | {{block.super}}{%endblock title %}</title>
+
+{% block body %}
+{% block function1 %}
+{% endblock function1 %}
+<div class="container" id="customers-list">
+    <h1>Customers</h1>
+    <hr>
+    {% for c in customers %}
+    <div class = "c" customer="{{c.id}}">
+        <h2>Product: {{c.first_name}}&emsp;{{c.last_initial}}.</h2>
+        <button class="delete-customer" customer="{{c.user}}">Delete</button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock body %}

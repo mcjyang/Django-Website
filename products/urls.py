@@ -5,8 +5,10 @@ from . import api
 
 
 urlpatterns = [
-    url(r'^home/', views.home, name = 'home'),
-    # url(r'^api/', include(router.urls))
-    url(r'^api/product/$', api.product_list),
-    url(r'^api/product/(?P<pk>[0-9]+)/$', api.product_detail),
+    
+    url(r'^admin/$', views.admin, name = 'product_admin'),
+    url(r'^home/$', views.home, name = 'home'),
+    url(r'^api/$', api.product_list, name = 'product_list'),
+    url(r'^api/(?P<pk>[0-9]+)/$', api.product_detail, name = 'product_detail'),
+    
 ]
